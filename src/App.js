@@ -60,23 +60,42 @@ import React, { useState } from "react";
 //   return <User>안녕하세요</User>;
 // }
 
+// function App() {
+//   const [dogs, setDogs] = useState(["말티즈"]);
+
+//   function onClickHandler() {
+// 	// spread operator(전개 연산자)를 이용해서 dogs를 복사 
+// 	// 그리고 나서 항목을 추가
+//     setDogs([...dogs, "시고르자브르종"]);
+//   }
+
+//   console.log(dogs);
+//   return (
+//     <div>
+//       {dogs}
+//       <br/>
+//       <button onClick={onClickHandler}>버튼</button>
+//     </div>
+//   );
+// }
+
 function App() {
-  const [dogs, setDogs] = useState(["말티즈"]);
+  const [number, setNumber] = useState(0);
+  
+  const plusNum = () => {
+    setNumber(number + 1);
+  };
 
-  function onClickHandler() {
-	// spread operator(전개 연산자)를 이용해서 dogs를 복사 
-	// 그리고 나서 항목을 추가
-    setDogs([...dogs, "시고르자브르종"]);
-  }
+  const minusNum = () => {
+    setNumber(number - 1);
+  };
 
-  console.log(dogs);
   return (
     <div>
-      {dogs}
-      <br/>
-      <button onClick={onClickHandler}>버튼</button>
+      <div>{number}</div>
+      <button onClick={plusNum}>+1</button>
+      <button onClick={minusNum}>-1</button>
     </div>
   );
 }
-
 export default App;
