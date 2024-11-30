@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import AppButton from "components/Button";
+import User from "components/User";
 import "./App.css";
 
 // function App() {
@@ -100,32 +102,7 @@ import "./App.css";
 //   );
 // }
 
-function AppButton(props) {
-  const {color, onClick, children} = props
-  	if (color)
-      return (
-      	<button 
-        	style={{ background: color, color: "white" }}
-      		onClick={onClick}
-		>
-          {children}
-		</button>
-      );
-  return <button onClick={onClick}>{props.children}</button>;
-}
 
-function User(props) {
-  return (
-    <div className="squareStyle">
-      <div>{props.user.age}살 -</div>
-      <div>{props.user.name}</div>
-      <AppButton color="red" onClick={() => props.userDelete(props.user.id)}>
-        삭제하기
-      </AppButton>{" "}
-      {/* 생성한 버튼 컴포넌트로 변경 */}
-    </div>
-  );
-}
 
 function App() {
   const [users, setUsers] = useState([
